@@ -5,21 +5,12 @@ public class PasswordStrengthMeter {
         if(s == null || s.isEmpty()) {
             return PasswordStrength.INVALID;
         }
-        boolean lengthEnough = s.length() >= 8;
-        boolean containsNum = this.meetsContainingNumberCriteria(s);
-        boolean containsUpp = this.meetsContainingUppercaseCriteria(s);
 
-        if(lengthEnough && !containsNum && !containsUpp) {
+        int metCounts = this.getMetCriteriaCounts(s);
+        if(metCounts <= 1) {
             return PasswordStrength.WEAK;
         }
-
-        if(!lengthEnough) {
-            return PasswordStrength.NORMAL;
-        }
-        if(!containsNum) {
-            return PasswordStrength.NORMAL;
-        }
-        if(!containsUpp) {
+        if(metCounts == 2) {
             return PasswordStrength.NORMAL;
         }
         return PasswordStrength.STRONG;
@@ -41,5 +32,20 @@ public class PasswordStrengthMeter {
             }
         }
         return false;
+    }
+
+    private int getMetCriteriaCounts(String s) {
+        int meetCounts = 0;
+        if(s.length() >= 8) {
+            meetCounts++;
+        }
+        if(this.meetsContainingNumberCriteria(s)) {
+            meetCounts++;
+        }
+        if(this.meetsContainingUppercaseCriteria(s)) {
+            meetCounts++;
+        }
+
+        return meetCounts;
     }
 }

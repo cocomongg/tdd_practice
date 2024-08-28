@@ -47,4 +47,19 @@ public class PasswordStrengthMeterTest {
     void meetsOnlyLengthCriteria_Then_Weak() {
         this.assertStrength("abdefghi", PasswordStrength.WEAK);
     }
+
+    @Test
+    void meetsOnlyNumCriteria_Then_Weak() {
+        this.assertStrength("12345", PasswordStrength.WEAK);
+    }
+
+    @Test
+    void meetsOnlyUpperCriteria_Then_Weak() {
+        this.assertStrength("ABZEF", PasswordStrength.WEAK);
+    }
+
+    @Test
+    void meetsNoCriteria_Then_Weak() {
+        this.assertStrength("abc", PasswordStrength.WEAK);
+    }
 }
