@@ -6,7 +6,7 @@ import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class BadTest {
+//public class BadTest {
 //    private FileOperator op = new FileOperator();
 //    private static File file;
 //
@@ -22,4 +22,4 @@ public class BadTest {
 //        long data = op.readDate(file);
 //        assertTrue(data > 0);
 //    }
-}
+//}
