@@ -12,7 +12,6 @@ public class AutoDebitRegister_Stub_Test {
 
     @BeforeEach
     void setUp() {
-//        CardNumberValidator validator = new CardNumberValidator();
         stubValidator = new StubCardNumberValidator();
         AutoDebitInfoRepository repository = new JpaAutoDebitInfoRepository();
         register = new AutoDebitRegister(stubValidator, repository);
