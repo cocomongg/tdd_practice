@@ -7,3 +7,4 @@
 ### [chapter05. JUnit5 기초](https://compile-this.tistory.com/4)
 ### [부록 C. Mockito 기초 사용법](https://compile-this.tistory.com/8)
 ### [chapter07. 대역](https://compile-this.tistory.com/9)
+### [chpater08. 테스트 가능한 설계](https://compile-this.tistory.com/10)
